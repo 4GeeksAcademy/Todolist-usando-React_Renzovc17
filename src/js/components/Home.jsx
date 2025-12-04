@@ -1,26 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 
 //include images into your bundle
 import rigoImage from "../../img/rigo-baby.jpg";
+import FormDinamico from "./formDinamico";
+import TodoList from "./todoList";
 
 //create your first component
 const Home = () => {
-	return (
-		<div className="text-center">
-            
 
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
+	const [formData, setFormData] = useState('pepe')
+
+	console.log("Home se ha cargado")
+			
+	const handleSubmit = e => {
+		e.preventDefault();
+		console.log(e)
+	}
+
+	const handleChange = e => {
+				console.log(e)
+
+				setFormData(e.target.value)
+	}
+
+	return (
+		<div className="text-center">		
+
+			{/*<form onSubmit={handleSubmit}> 
+				<input onChange={handleChange} value={formData} name="email" type="email" />
+				<input onChange={handleChange} type="password" />
+				<input type="submit" />
+			</form>     
+			<hr />
+			<FormDinamico />*/}
+			<hr />
+			<TodoList />
 		</div>
 	);
 };
