@@ -70,7 +70,9 @@ const TodoList = () => {
                             {
                                 data.length === 0 && (
                                     <li className="list-group-item text-center text-muted ">
-                                        No hay tareas, añadir tareas
+                                        No hay tareas, añadir nuevas
+                                        
+                                         tareas
                                     </li>)
                             }
                             {
